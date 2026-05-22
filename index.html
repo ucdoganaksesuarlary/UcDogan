@@ -3,122 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Üç Dogan - Aksesuar Dükany</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Üç Dogan - Premium Aksesuar Dükany</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gold: #D4AF37;
-            --dark-bg: #0a0a0a;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --text-gold: #FFD700;
+            --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            --gold-solid: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.15);
+            --dark-pure: #050505;
+            --dark-card: rgba(18, 18, 18, 0.7);
+            --border-color: rgba(212, 175, 55, 0.12);
+            --text-muted: #8e8e93;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: var(--dark-bg);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
+            background-color: var(--dark-pure);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at -10% 50%, rgba(255, 255, 255, 0.01) 0%, transparent 35%);
+            background-attachment: fixed;
         }
 
-        /* Navigasiýa */
+        /* Premium Navigasiýa */
         nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .logo-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
+        }
+
+        .logo-svg {
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2));
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo-container:hover .logo-svg {
+            transform: scale(1.05) rotate(5deg);
         }
 
         .logo-text {
-            font-size: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
             font-weight: 700;
-            color: var(--primary-gold);
-            letter-spacing: 3px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 4px;
             text-transform: uppercase;
         }
 
-        /* Baş sarlaw */
+        /* Hero Bölümi */
         .hero {
             text-align: center;
-            padding: 40px 20px 20px 20px;
+            padding: 50px 20px 30px 20px;
         }
 
         .hero h1 {
-            font-size: 28px;
-            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
 
-        /* 6 Sany Uly Menýu Grid */
+        .hero p {
+            font-size: 14px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            font-weight: 400;
+        }
+
+        /* Grid Menýu */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Telefonda 2 sany uly bolar ýaly */
-            gap: 20px;
-            padding: 20px 6%;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding: 10px 20px 50px 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .menu-item {
-            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 20px;
-            padding: 40px 15px; /* Has uly bolar ýaly padding goşuldy */
+            background: var(--dark-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px 20px;
             text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
             text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .menu-item:hover {
-            background: rgba(212, 175, 55, 0.1);
-            transform: translateY(-5px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.1);
+        /* Neon Altyn Effekt */
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .menu-item:active, .menu-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 12px 24px var(--gold-glow);
+        }
+
+        /* Ikonkalar üçin ýörite tegelek we dizaýn */
+        .icon-wrapper {
+            width: 65px;
+            height: 65px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .menu-item:hover .icon-wrapper {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold-solid);
+            transform: scale(1.1);
         }
 
         .menu-icon {
-            font-size: 40px; /* Ikonkalary ulaltdyk */
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+            font-size: 28px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
         }
 
-        .menu-item span {
-            font-size: 16px; /* Ýazgyny ulaltdyk */
-            color: #fff;
+        .menu-item span:not(.menu-icon) {
+            font-size: 15px;
+            color: #ffffff;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
         }
 
-        /* Arassalyk üçin harytlar bölümi aýryldy */
+        .menu-item:hover span:not(.menu-icon) {
+            color: var(--gold-solid);
+        }
+
+        /* Kiçi maglumat tekstleri */
+        .menu-item .sub-text {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 400;
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo-container">
-            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="logo-svg" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="6" cy="9" r="2.5" fill="#BF953F"/>
                 <path d="M2 18C2 15.5 4 13.5 6.5 13.5" stroke="#BF953F" stroke-width="1.5" stroke-linecap="round"/>
                 <circle cx="18" cy="9" r="2.5" fill="#BF953F"/>
@@ -126,38 +205,57 @@
                 <circle cx="12" cy="8" r="3" fill="#FFD700"/>
                 <path d="M8.5 19C8.5 16.5 10 14.5 12 14.5C14 14.5 15.5 16.5 15.5 19" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
             </svg>
-            <span class="logo-text">ÜÇ DOGAN</span>
+            <span class="logo-text">Üç Dogan</span>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Aksesuar dükany</h1>
+        <h1>Aksesuar Dükany</h1>
+        <p>Premium hilli mobil enjamlar we aksesuarlar</p>
     </section>
 
     <div class="menu-grid">
         <a href="#" class="menu-item">
-            <span class="menu-icon">📱</span>
-            <span>Menýu 1</span>
+            <div class="icon-wrapper">
+                <span class="menu-icon">📱</span>
+            </div>
+            <span>Çholplar</span>
+            <span class="sub-text">Premium goraglar</span>
         </a>
         <a href="#" class="menu-item">
-            <span class="menu-icon">🎧</span>
-            <span>Menýu 2</span>
+            <div class="icon-wrapper">
+                <span class="menu-icon">🎧</span>
+            </div>
+            <span>Nauşniklar</span>
+            <span class="sub-text">Arassa ses hili</span>
         </a>
         <a href="#" class="menu-item">
-            <span class="menu-icon">⚡</span>
-            <span>Menýu 3</span>
+            <div class="icon-wrapper">
+                <span class="menu-icon">⚡</span>
+            </div>
+            <span>Zarýadniklar</span>
+            <span class="sub-text">Çalt we howpsuz</span>
         </a>
         <a href="#" class="menu-item">
-            <span class="menu-icon">🛡️</span>
-            <span>Menýu 4</span>
+            <div class="icon-wrapper">
+                <span class="menu-icon">🛡️</span>
+            </div>
+            <span>Gorag aýnalary</span>
+            <span class="sub-text">9H berk gorag</span>
         </a>
         <a href="#" class="menu-item">
-            <span class="menu-icon">⌚</span>
-            <span>Menýu 5</span>
+            <div class="icon-wrapper">
+                <span class="menu-icon">⌚</span>
+            </div>
+            <span>Smart sagatlar</span>
+            <span class="sub-text">Döwrebap stiller</span>
         </a>
         <a href="#" class="menu-item">
-            <span class="menu-icon">⚙️</span>
-            <span>Menýu 6</span>
+            <div class="icon-wrapper">
+                <span class="menu-icon">⚙️</span>
+            </div>
+            <span>Beýlekiler</span>
+            <span class="sub-text">Ähli zerurlyklar</span>
         </a>
     </div>
 
