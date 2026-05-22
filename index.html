@@ -14,7 +14,7 @@
             --dark-card: rgba(18, 18, 18, 0.7);
             --border-color: rgba(212, 175, 55, 0.12);
             --text-muted: #8e8e93;
-            --success-green: #24b47e;
+            --success-green: #25D366; /* Hakyky WhatsApp Ýaşyly */
         }
 
         * {
@@ -60,10 +60,6 @@
         .logo-svg {
             filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2));
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .logo-container:hover .logo-svg {
-            transform: scale(1.05) rotate(5deg);
         }
 
         .logo-text {
@@ -148,15 +144,19 @@
             transition: all 0.4s ease;
         }
 
-        .menu-item:hover .icon-wrapper {
-            background: rgba(212, 175, 55, 0.15);
-            border-color: var(--gold-solid);
-            transform: scale(1.1);
-        }
-
         .menu-icon {
             font-size: 28px;
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        /* Kategoriýa Suraty goşulsa işlejek dizaýn */
+        .menu-thumb {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .menu-item span:not(.menu-icon) {
@@ -164,7 +164,6 @@
             color: #ffffff;
             font-weight: 600;
             letter-spacing: 0.5px;
-            transition: color 0.3s ease;
         }
 
         .menu-item:hover span:not(.menu-icon) {
@@ -178,7 +177,7 @@
             font-weight: 400;
         }
 
-        /* MODAL (Harytlar açylýan ekran dizaýny) */
+        /* MODAL */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -259,10 +258,10 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 16px;
-            padding: 16px;
+            padding: 14px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 14px;
             cursor: pointer;
             transition: all 0.2s ease;
         }
@@ -272,10 +271,21 @@
             border-color: rgba(212, 175, 55, 0.3);
         }
 
+        /* Haryt Suraty üçin ýer */
+        .product-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
         .product-details {
             display: flex;
             flex-direction: column;
             gap: 4px;
+            flex: 1;
         }
 
         .product-name {
@@ -294,7 +304,7 @@
             font-size: 15px;
         }
 
-        /* TÖLEG MODAL (Ýörite täze dizaýn) */
+        /* TÖLEG ENJAMLARY */
         .payment-box {
             background: rgba(212, 175, 55, 0.03);
             border: 1px dashed var(--gold-solid);
@@ -304,66 +314,117 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            position: relative;
         }
 
         .payment-title {
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--gold-solid);
             font-weight: 700;
         }
 
-        .iban-text {
-            font-family: monospace;
-            font-size: 15px;
-            background: #000;
-            padding: 10px;
-            border-radius: 8px;
-            color: #fff;
-            word-break: break-all;
-            user-select: all; /* Üstüne basanda göni nusgalamak üçin */
+        /* Kopyalanýan meýdançalar */
+        .clickable-copy {
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s;
+        }
+
+        .clickable-copy:active {
+            background: rgba(212, 175, 55, 0.1) !important;
         }
 
         .owner-text {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
+            background: rgba(255,255,255,0.02);
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .iban-text {
+            font-family: monospace;
+            font-size: 16px;
+            background: #000;
+            padding: 12px 14px;
+            border-radius: 10px;
+            color: #fff;
+            word-break: break-all;
+            border: 1px solid rgba(255,255,255,0.03);
         }
 
         .total-amount-box {
             font-size: 16px;
             font-weight: 700;
-            margin: 10px 0;
-            padding: 12px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 10px;
+            margin: 16px 0;
+            padding: 14px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 12px;
             text-align: center;
-            border-left: 4px solid var(--gold-solid);
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
+        /* Toast Bildiriş (Nusgalandy popup) */
+        .toast-notification {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: var(--gold-solid);
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            z-index: 3000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast-notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Realny WhatsApp Düwmesi */
         .whatsapp-btn {
             background: var(--success-green);
             color: white;
             border: none;
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 16px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
             cursor: pointer;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            transition: opacity 0.2s;
+            gap: 12px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
+            transition: all 0.2s;
+        }
+
+        .whatsapp-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
         }
 
         .whatsapp-btn:active {
-            opacity: 0.8;
+            transform: scale(0.98);
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
+
+    <div class="toast-notification" id="toastNotice">Nusgalandy!</div>
 
     <nav>
         <div class="logo-container">
@@ -435,7 +496,6 @@
                 <h2 class="modal-title" id="modalTitle">Kategoriýa</h2>
                 <button class="close-btn" onclick="closeModal(force=true)">✕</button>
             </div>
-            
             <div id="modalBodyArea">
                 <div class="product-list" id="modalProductList"></div>
             </div>
@@ -443,45 +503,44 @@
     </div>
 
     <script>
-        // Islän wagtyňyz şu ýere täze harytlary köpeldip bilersiňiz, dizaýn bozulmaz!
+        // Suratlary goýmak üçin 'img' açaryny goşdum. Bärde harytlaryň suratlarynyň silkasyny (url) ýazyp bilersiňiz!
         const categoryData = {
             cehollar: {
                 title: "Çehollar",
                 products: [
-                    { name: "iPhone 15 Pro Max Case", desc: "Silikon goragly", price: "250 TMT" },
-                    { name: "Samsung S24 Ultra Cover", desc: "Premium deri dizaýn", price: "300 TMT" }
+                    { name: "iPhone 15 Pro Max Case", desc: "Silikon goragly", price: "250 TMT", img: "placeholder.jpg" },
+                    { name: "Samsung S24 Ultra Cover", desc: "Premium deri dizaýn", price: "300 TMT", img: "placeholder.jpg" }
                 ]
             },
             nausniklar: {
                 title: "Nauşniklar",
                 products: [
-                    { name: "AirPods Pro 2", desc: "Ýokary hilli ses we ANC", price: "450 TMT" }
+                    { name: "AirPods Pro 2", desc: "Ýokary hilli ses we ANC", price: "450 TMT", img: "placeholder.jpg" }
                 ]
             },
             zaryadniklar: {
                 title: "Zarýadniklar",
                 products: [
-                    { name: "Anker 20W Fast Charger", desc: "Çalt zarýad beriji adapter", price: "150 TMT" },
-                    { name: "Baseus 30W Super Qi", desc: "Durnukly tok guýujy", price: "220 TMT" },
-                    { name: "Samsung 45W Ultra Adapter", desc: "Super çalt kuwwatlandyryjy", price: "350 TMT" }
+                    { name: "Anker 20W Fast Charger", desc: "Çalt zarýad beriji adapter", price: "150 TMT", img: "placeholder.jpg" },
+                    { name: "Samsung 45W Ultra Adapter", desc: "Super çalt kuwwatlandyryjy", price: "350 TMT", img: "placeholder.jpg" }
                 ]
             },
             gorag_aynalary: {
                 title: "Gorag Aýnalary",
                 products: [
-                    { name: "Green Lion 9H Glass", desc: "Dolu ekran gorag", price: "80 TMT" }
+                    { name: "Green Lion 9H Glass", desc: "Dolu ekran gorag", price: "80 TMT", img: "placeholder.jpg" }
                 ]
             },
             smart_sagatlar: {
                 title: "Smart Sagatlar",
                 products: [
-                    { name: "Watch Series 9 Ultra", desc: "Ähli funksiýalar işjeň", price: "550 TMT" }
+                    { name: "Watch Series 9 Ultra", desc: "Ähli funksiýalar işjeň", price: "550 TMT", img: "placeholder.jpg" }
                 ]
             },
             kalonkalar: {
                 title: "Kalonkalar",
                 products: [
-                    { name: "JBL Flip 6 Premium", desc: "Suw geçirmeýän güýçli akustika", price: "480 TMT" }
+                    { name: "JBL Flip 6 Premium", desc: "Suw geçirmeýän güýçli akustika", price: "480 TMT", img: "placeholder.jpg" }
                 ]
             }
         };
@@ -489,8 +548,10 @@
         const ibanNumber = "TR91 0015 7000 0000 0201 1511 63";
         const accountOwner = "AMAN HAYITMURADOV";
         const whatsappNumber = "99364041065";
+        let currentCategoryKey = "";
 
         function openModal(categoryKey) {
+            currentCategoryKey = categoryKey;
             const data = categoryData[categoryKey];
             if (!data) return;
 
@@ -498,9 +559,10 @@
             
             let listHtml = '<div class="product-list">';
             data.products.forEach(prod => {
-                // Ýerlikli haryda basylanda göni töleg meýdançasyny açýar
+                // Eger surat goýmasaňyz, awtomat döwrebap fona meňzeş meýdança durar
                 listHtml += `
-                    <div class="product-item" onclick="showPaymentPage('${prod.name}', '${prod.price}')">
+                    <div class="product-item" onclick="showPaymentPage('${prod.name.replace(/'/g, "\\'")}', '${prod.price}')">
+                        <img src="${prod.img}" onerror="this.style.display='none'" class="product-img">
                         <div class="product-details">
                             <span class="product-name">${prod.name}</span>
                             <span class="product-desc">${prod.desc}</span>
@@ -516,14 +578,13 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // Haryda basylanda Töleg Maglumatlaryny dynamic görkezýän funksiýa
         function showPaymentPage(productName, productPrice) {
             const htmlContent = `
                 <div class="payment-box">
-                    <span class="payment-title">Bank Töleg Maglumaty</span>
-                    <div class="owner-text">Eýesi: ${accountOwner}</div>
-                    <div class="iban-text">${ibanNumber}</div>
-                    <span style="font-size: 11px; color: var(--text-muted);">IBAN belgisiniň üstüne basyp göni nusgalap bilersiňiz.</span>
+                    <span class="payment-title">Bank Töleg Maglumaty (Nusgalamak üçin basyň)</span>
+                    <div class="owner-text clickable-copy" onclick="copyToClipboard('${accountOwner}')">Eýesi: ${accountOwner}</div>
+                    <div class="iban-text clickable-copy" onclick="copyToClipboard('${ibanNumber.replace(/\s/g, "")}')">${ibanNumber}</div>
+                    <span style="font-size: 11px; color: var(--text-muted); text-align:center;">Islendik maglumatyň üstüne basyp awtomat nusgalap bilersiňiz.</span>
                 </div>
                 
                 <div class="total-amount-box">
@@ -531,29 +592,4 @@
                 </div>
 
                 <button class="whatsapp-btn" onclick="sendWhatsAppNotification('${productName}', '${productPrice}')">
-                    <span>💬</span> Töleg etdim
-                </button>
-                
-                <button style="background:transparent; border:none; color:var(--text-muted); margin-top:15px; width:100%; text-align:center; cursor:pointer;" onclick="openModal(currentCategory)">← Yzyna dön</button>
-            `;
-            document.getElementById('modalBodyArea').innerHTML = htmlContent;
-        }
-
-        // WhatsApp-a awtomat habar ugratmak
-        function sendWhatsAppNotification(name, price) {
-            const message = `Salam Aman, men "${name}" harydyny almak üçin ${price} töleg etdim. Ine, tassyklamasy!`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        function closeModal(event, force = false) {
-            if (force || event.target.classList.contains('modal-overlay')) {
-                document.getElementById('productModal').classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-    </script>
-
-</body>
-</html>
+              
