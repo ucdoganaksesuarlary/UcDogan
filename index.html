@@ -14,7 +14,7 @@
             --dark-card: rgba(18, 18, 18, 0.7);
             --border-color: rgba(212, 175, 55, 0.12);
             --text-muted: #8e8e93;
-            --success-green: #25D366; /* Hakyky WhatsApp Ýaşyly */
+            --success-green: #25D366;
         }
 
         * {
@@ -125,7 +125,7 @@
             cursor: pointer;
         }
 
-        .menu-item:active, .menu-item:hover {
+        .menu-item:active {
             transform: translateY(-4px);
             border-color: rgba(212, 175, 55, 0.5);
             box-shadow: 0 12px 24px var(--gold-glow);
@@ -141,7 +141,6 @@
             justify-content: center;
             margin-bottom: 16px;
             border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: all 0.4s ease;
         }
 
         .menu-icon {
@@ -149,25 +148,11 @@
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
         }
 
-        /* Kategoriýa Suraty goşulsa işlejek dizaýn */
-        .menu-thumb {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 16px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
         .menu-item span:not(.menu-icon) {
             font-size: 15px;
             color: #ffffff;
             font-weight: 600;
             letter-spacing: 0.5px;
-        }
-
-        .menu-item:hover span:not(.menu-icon) {
-            color: var(--gold-solid);
         }
 
         .menu-item .sub-text {
@@ -271,7 +256,6 @@
             border-color: rgba(212, 175, 55, 0.3);
         }
 
-        /* Haryt Suraty üçin ýer */
         .product-img {
             width: 55px;
             height: 55px;
@@ -314,7 +298,6 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            position: relative;
         }
 
         .payment-title {
@@ -325,10 +308,8 @@
             font-weight: 700;
         }
 
-        /* Kopyalanýan meýdançalar */
         .clickable-copy {
             cursor: pointer;
-            position: relative;
             transition: background 0.2s;
         }
 
@@ -367,7 +348,7 @@
             border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        /* Toast Bildiriş (Nusgalandy popup) */
+        /* Toast Popup */
         .toast-notification {
             position: fixed;
             top: 30px;
@@ -494,7 +475,7 @@
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
                 <h2 class="modal-title" id="modalTitle">Kategoriýa</h2>
-                <button class="close-btn" onclick="closeModal(force=true)">✕</button>
+                <button class="close-btn" onclick="closeModal(null, true)">✕</button>
             </div>
             <div id="modalBodyArea">
                 <div class="product-list" id="modalProductList"></div>
@@ -503,7 +484,7 @@
     </div>
 
     <script>
-        // Suratlary goýmak üçin 'img' açaryny goşdum. Bärde harytlaryň suratlarynyň silkasyny (url) ýazyp bilersiňiz!
+        // Harytlaryň sanawy we suratlary (img ýerine hakyky surat adyny ýazyp bilersiňiz)
         const categoryData = {
             cehollar: {
                 title: "Çehollar",
@@ -548,10 +529,10 @@
         const ibanNumber = "TR91 0015 7000 0000 0201 1511 63";
         const accountOwner = "AMAN HAYITMURADOV";
         const whatsappNumber = "99364041065";
-        let currentCategoryKey = "";
+        let activeCategoryKey = ""; // Ýalňyşlyk düzedilen ýer
 
         function openModal(categoryKey) {
-            currentCategoryKey = categoryKey;
+            activeCategoryKey = categoryKey;
             const data = categoryData[categoryKey];
             if (!data) return;
 
@@ -559,7 +540,6 @@
             
             let listHtml = '<div class="product-list">';
             data.products.forEach(prod => {
-                // Eger surat goýmasaňyz, awtomat döwrebap fona meňzeş meýdança durar
                 listHtml += `
                     <div class="product-item" onclick="showPaymentPage('${prod.name.replace(/'/g, "\\'")}', '${prod.price}')">
                         <img src="${prod.img}" onerror="this.style.display='none'" class="product-img">
@@ -581,10 +561,10 @@
         function showPaymentPage(productName, productPrice) {
             const htmlContent = `
                 <div class="payment-box">
-                    <span class="payment-title">Bank Töleg Maglumaty (Nusgalamak üçin basyň)</span>
+                    <span class="payment-title">Bank Töleg Maglumaty</span>
                     <div class="owner-text clickable-copy" onclick="copyToClipboard('${accountOwner}')">Eýesi: ${accountOwner}</div>
                     <div class="iban-text clickable-copy" onclick="copyToClipboard('${ibanNumber.replace(/\s/g, "")}')">${ibanNumber}</div>
-                    <span style="font-size: 11px; color: var(--text-muted); text-align:center;">Islendik maglumatyň üstüne basyp awtomat nusgalap bilersiňiz.</span>
+                    <span style="font-size: 11px; color: var(--text-muted); text-align:center;">Nusgalamak üçin islendik maglumatyň üstüne basyň.</span>
                 </div>
                 
                 <div class="total-amount-box">
@@ -592,4 +572,43 @@
                 </div>
 
                 <button class="whatsapp-btn" onclick="sendWhatsAppNotification('${productName}', '${productPrice}')">
-              
+                    <svg viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.184.001 6.177 1.239 8.426 3.49s3.486 5.244 3.486 8.428c-.003 6.616-5.34 11.963-11.908 11.963-2.004-.001-3.973-.506-5.717-1.47L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.747 1.451 5.436 0 9.86-4.413 9.863-9.83.001-2.624-1.023-5.092-2.884-6.954C16.453 1.96 13.99 .936 11.96 .936c-5.437 0-9.863 4.414-9.866 9.833-.001 1.673.477 3.303 1.381 4.721L2.43 21.03l5.654-1.476zM16.65 14.8c-.26-.13-1.534-.76-1.772-.84-.238-.09-.41-.13-.58.13-.17.26-.66.84-.81.1-.15-.17-.6-.22-1.14-.7-.42-.37-.7-.83-.78-.97-.09-.14-.01-.22.06-.29.07-.06.15-.17.22-.26.08-.09.11-.15.17-.26.06-.11.03-.21-.01-.3-.04-.09-.41-1-.56-1.37-.15-.35-.29-.3-.41-.3-.11 0-.24-.01-.38-.01-.14 0-.37.05-.56.26-.19.21-.73.71-.73 1.74 0 1.03.75 2.02.85 2.16.11.14 1.47 2.25 3.56 3.15.5.21.88.34 1.19.44.5.16.96.14 1.32.08.41-.06 1.534-.63 1.75-1.23.214-.61.214-1.13.15-1.23-.06-.1-.23-.17-.49-.3z"/>
+                    </svg>
+                    Töleg etdim
+                </button>
+                
+                <button style="background:transparent; border:none; color:var(--text-muted); margin-top:20px; width:100%; text-align:center; cursor:pointer; font-weight:600;" onclick="openModal(activeCategoryKey)">← Yzyna dön</button>
+            `;
+            document.getElementById('modalBodyArea').innerHTML = htmlContent;
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toastNotice');
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error('Nusgalap bolmady: ', err);
+            });
+        }
+
+        function sendWhatsAppNotification(name, price) {
+            const message = `Salam Aman, men "${name}" harydyny almak üçin ${price} töleg etdim. Ine, tassyklamasy!`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function closeModal(event, force = false) {
+            if (force || event.target.classList.contains('modal-overlay')) {
+                document.getElementById('productModal').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
