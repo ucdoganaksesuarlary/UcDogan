@@ -54,7 +54,6 @@
             gap: 12px;
         }
 
-        /* 3D Üç Dogan Professional Geometrik Logo */
         .logo-box {
             width: 42px;
             height: 42px;
@@ -394,7 +393,7 @@
     </div>
 
     <script>
-        // İki dildäki maglumatlar bazasy
+        // Maglumatlar bazasy (Täze 7 kategoriýa we harytlar)
         const localization = {
             tk: {
                 heroTitle: "Aksesuar Dükany",
@@ -407,33 +406,36 @@
                 waBtn: "Sargyt barada habar ber",
                 waMsg: "Salam! Men \"Üç Dogan\" dükanyndan aşakdaky sargydy etmek isleýärin:%0A%0A*Haryt:* [NAME]%0A*Bahasy:* [PRICE]%0A%0ATölegi etdim. Sargydymy tassyklamagyňyzy soraýaryn.",
                 categories: {
-                    cehollar: { name: "Çehollar", sub: "Premium goraglar", icon: "📱" },
-                    nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili", icon: "🎧" },
+                    telefonlar: { name: "Telefonlar", sub: "Täze modeller", icon: "📱" },
+                    kalonkalar: { name: "Kalonkalar", sub: "Güýçli akustika", icon: "🔊" },
+                    sagatlar: { name: "Sagatlar", sub: "Smart stiller", icon: "⌚" },
                     zaryadniklar: { name: "Zarýadniklar", sub: "Çalt we howpsuz", icon: "⚡" },
-                    gorag_aynalary: { name: "Gorag aýnalary", sub: "9H berk gorag", icon: "🛡️" },
-                    smart_sagatlar: { name: "Smart sagatlar", sub: "Döwrebap stiller", icon: "⌚" },
-                    kalonkalar: { name: "Kalonkalar", sub: "Güýçli akustika", icon: "🔊" }
+                    udarniklar: { name: "Udarniklar", sub: "Berk gorag aýnasy", icon: "🛡️" },
+                    cehollar: { name: "Telefon daşlar", sub: "Premium kılıflar", icon: "💼" },
+                    nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili", icon: "🎧" }
                 },
                 products: {
+                    telefonlar: [
+                        { name: "iPhone 15 Pro Max", desc: "256GB Dubay Karopka", price: "12000 TMT" },
+                        { name: "Samsung S24 Ultra", desc: "512GB Karopka", price: "11500 TMT" }
+                    ],
+                    kalonkalar: [
+                        { name: "JBL Flip 6 Premium", desc: "Suw geçirmeýän güýçli akustika", price: "480 TMT" }
+                    ],
+                    sagatlar: [
+                        { name: "Watch Series 9 Ultra", desc: "Ähli funksiýalar işjeň", price: "550 TMT" }
+                    ],
+                    zaryadniklar: [
+                        { name: "Anker 20W Fast Charger", desc: "Çalt adapter", price: "150 TMT" }
+                    ],
+                    udarniklar: [
+                        { name: "Green Lion 9H Glass", desc: "Dolu ekran gorag", price: "80 TMT" }
+                    ],
                     cehollar: [
-                        { name: "iPhone 15 Pro Max Case", desc: "Silikon goragly", price: "250 TMT" },
-                        { name: "Samsung S24 Ultra Cover", desc: "Premium deri dizaýn", price: "300 TMT" }
+                        { name: "iPhone 15 Pro Magsafe Case", desc: "Silikon reňkli daşlar", price: "180 TMT" }
                     ],
                     nausniklar: [
                         { name: "AirPods Pro 2", desc: "Ýokary hilli ses we ANC", price: "450 TMT" }
-                    ],
-                    zaryadniklar: [
-                        { name: "Anker 20W Fast Charger", desc: "Çalt adapter", price: "150 TMT" },
-                        { name: "Samsung 45W Adapter", desc: "Super çalt kuwwat", price: "350 TMT" }
-                    ],
-                    gorag_aynalary: [
-                        { name: "Green Lion 9H Glass", desc: "Dolu ekran gorag", price: "80 TMT" }
-                    ],
-                    smart_sagatlar: [
-                        { name: "Watch Series 9 Ultra", desc: "Ähli funksiýalar işjeň", price: "550 TMT" }
-                    ],
-                    kalonkalar: [
-                        { name: "JBL Flip 6 Premium", desc: "Suw geçirmeýän akustika", price: "480 TMT" }
                     ]
                 }
             },
@@ -446,35 +448,38 @@
                 payNotice: "Kopyalamak için istediğiniz bilginin üzerine tıklayın.",
                 payTotal: "Müşteri, [PRICE] ödeme yapmalıdır.",
                 waBtn: "Siparişi Bildir",
-                waMsg: "Merhaba! \"Üç Dogan\" mağazanızdan şu ürünü sipariş etmek istiyorum:%0A%0A*Ürün:* [NAME]%0A*Fiyat:* [PRICE]%0A%0AÖdemeyi gerçekleştirdim. Siparişimin onaylanmasını rica ederim.",
+                waMsg: "Merhaba! \"Üç Dogan\" mağazanızdan şu ürünü sipariş etmek istiyorum:%0A%0A*Ürün:* [NAME]%0A*Fiyat:* [PRICE]%0A%0AÖdemeyi gerçekleştirlim. Siparişimin onaylanmasını rica ederim.",
                 categories: {
-                    cehollar: { name: "Kılıflar", sub: "Premium koruma", icon: "📱" },
-                    nausniklar: { name: "Kulaklıklar", sub: "Net ses kalitesi", icon: "🎧" },
+                    telefonlar: { name: "Telefonlar", sub: "Yeni modeller", icon: "📱" },
+                    kalonkalar: { name: "Hoparlörler", sub: "Güçlü akustik", icon: "🔊" },
+                    sagatlar: { name: "Saatler", sub: "Akıllı stiller", icon: "⌚" },
                     zaryadniklar: { name: "Şarj Cihazları", sub: "Hızlı ve güvenli", icon: "⚡" },
-                    gorag_aynalary: { name: "Ekran Koruyucular", sub: "9H tam koruma", icon: "🛡️" },
-                    smart_sagatlar: { name: "Akıllı Saatler", sub: "Modern stiller", icon: "⌚" },
-                    kalonkalar: { name: "Hoparlörler", sub: "Güçlü akustik", icon: "🔊" }
+                    udarniklar: { name: "Kırılmaz Camlar", sub: "9H tam koruma", icon: "🛡️" },
+                    cehollar: { name: "Telefon Kılıfları", sub: "Premium kılıflar", icon: "💼" },
+                    nausniklar: { name: "Kulaklıklar", sub: "Net ses kalitesi", icon: "🎧" }
                 },
                 products: {
-                    cehollar: [
-                        { name: "iPhone 15 Pro Max Kılıf", desc: "Silikon korumalı", price: "250 TMT" },
-                        { name: "Samsung S24 Ultra Kılıf", desc: "Premium deri tasarım", price: "300 TMT" }
-                    ],
-                    nausniklar: [
-                        { name: "AirPods Pro 2", desc: "Yüksek ses ve ANC", price: "450 TMT" }
-                    ],
-                    zaryadniklar: [
-                        { name: "Anker 20W Hızlı Şarj", desc: "Hızlı adaptör", price: "150 TMT" },
-                        { name: "Samsung 45W Şarj Aleti", desc: "Süper hızlı güç", price: "350 TMT" }
-                    ],
-                    gorag_aynalary: [
-                        { name: "Green Lion 9H Cam", desc: "Tam ekran koruma", price: "80 TMT" }
-                    ],
-                    smart_sagatlar: [
-                        { name: "Watch Series 9 Ultra", desc: "Tüm fonksiyonlar aktif", price: "550 TMT" }
+                    telefonlar: [
+                        { name: "iPhone 15 Pro Max", desc: "256GB Sıfır Kutu", price: "12000 TMT" },
+                        { name: "Samsung S24 Ultra", desc: "512GB Sıfır Kutu", price: "11500 TMT" }
                     ],
                     kalonkalar: [
                         { name: "JBL Flip 6 Premium", desc: "Su geçirmez güçlü ses", price: "480 TMT" }
+                    ],
+                    sagatlar: [
+                        { name: "Watch Series 9 Ultra", desc: "Tüm fonksiyonlar aktif", price: "550 TMT" }
+                    ],
+                    zaryadniklar: [
+                        { name: "Anker 20W Hızlı Şarj", desc: "Hızlı adaptör", price: "150 TMT" }
+                    ],
+                    udarniklar: [
+                        { name: "Green Lion 9H Cam", desc: "Tam ekran koruma", price: "80 TMT" }
+                    ],
+                    cehollar: [
+                        { name: "iPhone 15 Pro Magsafe Kılıf", desc: "Renkli silikon kılıf", price: "180 TMT" }
+                    ],
+                    nausniklar: [
+                        { name: "AirPods Pro 2", desc: "Yüksek ses ve ANC", price: "450 TMT" }
                     ]
                 }
             }
@@ -486,7 +491,7 @@
         const accountOwner = "AMAN HAYITMURADOV";
         const whatsappNumber = "99364041065";
 
-        // Saýtyň sebitini we dillerini gurnamak
+        // Menýulary we dilleri ekrana çykarmak
         function renderMenu() {
             const langData = localization[currentLang];
             document.getElementById('heroTitle').innerText = langData.heroTitle;
@@ -525,17 +530,21 @@
             document.getElementById('modalTitle').innerText = catInfo.name;
 
             let bodyHtml = '<div class="list-box">';
-            prods.forEach(p => {
-                bodyHtml += `
-                    <div class="item-row" onclick="openPayment('${p.name.replace(/'/g, "\\'")}', '${p.price}')">
-                        <div class="item-info">
-                            <span class="item-title">${p.name}</span>
-                            <span class="item-desc">${p.desc}</span>
+            if(prods.length === 0) {
+                bodyHtml += `<p style="text-align:center; color:var(--text-sub); font-size:13px; padding:20px;">Haryt tapylmady / Ürün bulunmadı.</p>`;
+            } else {
+                prods.forEach(p => {
+                    bodyHtml += `
+                        <div class="item-row" onclick="openPayment('${p.name.replace(/'/g, "\\'")}', '${p.price}')">
+                            <div class="item-info">
+                                <span class="item-title">${p.name}</span>
+                                <span class="item-desc">${p.desc}</span>
+                            </div>
+                            <span class="item-price">${p.price}</span>
                         </div>
-                        <span class="item-price">${p.price}</span>
-                    </div>
-                `;
-            });
+                    `;
+                });
+            }
             bodyHtml += '</div>';
 
             document.getElementById('modalBody').innerHTML = bodyHtml;
@@ -549,12 +558,4 @@
                 <div class="info-card">
                     <span style="font-size:12px; font-weight:700; color:var(--gold); text-transform:uppercase;">${langData.payTitle}</span>
                     <div class="info-row" onclick="copyText('${accountOwner}')">Eýesi / Alıcı: ${accountOwner}</div>
-                    <div class="info-row" onclick="copyText('${ibanNumber.replace(/\s/g, "")}')" style="letter-spacing:1px; font-size:13px;">${ibanNumber}</div>
-                    <p style="font-size:11px; color:var(--text-sub); text-align:center; margin-top:10px;">${langData.payNotice}</p>
-                </div>
-                
-                <div class="price-banner">
-                    ${langData.payTotal.replace('[PRICE]', price)}
-                </div>
-
-                <button class="action-btn" onclick="sendOrder('${name.
+                    <div class="info-row" oncl
