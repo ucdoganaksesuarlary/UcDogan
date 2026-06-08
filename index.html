@@ -356,6 +356,20 @@
             gap: 8px;
         }
 
+        .back-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-bottom: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         .toast {
             position: fixed;
             top: 24px;
@@ -467,10 +481,12 @@
                 heroTitle: "Aksesuar Dükany",
                 heroDesc: "Premium hilli mobil enjamlar we aksesuarlar",
                 copyMsg: "Nusgalandy!",
+                backBtn: "← Yza, harytlar sanawyna",
                 payTitle: "Bank Töleg Maglumaty",
                 payNotice: "Nusgalamak üçin islendik maglumatyň üstüne basyň.",
                 payTotal: "Müşderi, [PRICE] töleg etmeli.",
                 waBtn: "Sargyt barada habar ber",
+                emptyMsg: "Haryt tapylmady.",
                 categories: {
                     telefonlar: { name: "Telefonlar", sub: "Täze modeller" },
                     kalonkalar: { name: "Kalonkalar", sub: "Güýçli akustika" },
@@ -481,9 +497,8 @@
                     nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili" }
                 },
                 products: {
-                    /* SURATLAR ÜÇIN: 'img' ýerine öz suratyňyň linkini ýazyp bilersiň */
                     telefonlar: [
-                        { name: "iPhone 15 Pro Max", desc: "256GB Paket", price: "12000 TMT", img: "https://via.placeholder.com/60" },
+                        { name: "iPhone 15 Pro Max", desc: "256GB Paket", price: "12000 TMT", img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=150" },
                         { name: "Samsung S24 Ultra", desc: "512GB Paket", price: "11500 TMT", img: "" }
                     ],
                     kalonkalar: [
@@ -510,10 +525,12 @@
                 heroTitle: "Aksesuar Mağazası",
                 heroDesc: "Premium kalite mobil cihazlar ve aksesuarlar",
                 copyMsg: "Kopyalandı!",
+                backBtn: "← Geri, ürün listesine",
                 payTitle: "Banka Ödeme Bilgileri",
                 payNotice: "Kopyalamak için istediğiniz bilginin üzerine tıklayın.",
                 payTotal: "Müşteri, [PRICE] ödeme yapmalıdır.",
                 waBtn: "Siparişi Bildir",
+                emptyMsg: "Ürün bulunamadı.",
                 categories: {
                     telefonlar: { name: "Telefonlar", sub: "Yeni modeller" },
                     kalonkalar: { name: "Hoparlörler", sub: "Güçlü akustik" },
@@ -525,23 +542,14 @@
                 },
                 products: {
                     telefonlar: [
-                        { name: "iPhone 15 Pro Max", desc: "256GB Sifir Kutu", price: "12000 TMT", img: "https://via.placeholder.com/60" },
-                        { name: "Samsung S24 Ultra", desc: "512GB Sifir Kutu", price: "11500 TMT", img: "" }
+                        { name: "iPhone 15 Pro Max", desc: "256GB Sıfır Kutu", price: "12000 TMT", img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=150" },
+                        { name: "Samsung S24 Ultra", desc: "512GB Sıfır Kutu", price: "11500 TMT", img: "" }
                     ],
                     kalonkalar: [
-                        { name: "JBL Flip 6 Premium", desc: "Su gecirmez guclu ses", price: "400 TMT", img: "" }
+                        { name: "JBL Flip 6 Premium", desc: "Su geçirmez güçlü ses", price: "480 TMT", img: "" }
                     ],
                     sagatlar: [
-                        { name: "Watch Series 9 Ultra", desc: "Tum fonksiyonlar aktif", price: "550 TMT", img: "" }
+                        { name: "Watch Series 9 Ultra", desc: "Tüm fonksiyonlar aktif", price: "550 TMT", img: "" }
                     ],
                     zaryadniklar: [
-                        { name: "Anker 20W Hizli Sarj", desc: "Hizli adaptoor", price: "150 TMT", img: "" }
-                    ],
-                    udarniklar: [
-                        { name: "Green Lion 9H Cam", desc: "Tam ekran koruma", price: "80 TMT", img: "" }
-                    ],
-                    cehollar: [
-                        { name: "iPhone 15 Pro Magsafe Kilif", desc: "Renkli silikon kilif", price: "180 TMT", img: "" }
-                    ],
-                    nausniklar: [
-                        { name: "AirPods Pro 2", desc: "Yuksek ses ve ANC", price: "450 TMT", img: "" 
+             
