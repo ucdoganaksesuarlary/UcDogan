@@ -79,6 +79,31 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .refresh-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .refresh-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
         .lang-switcher {
             display: flex;
             background: rgba(255, 255, 255, 0.05);
@@ -402,9 +427,14 @@
             <div class="logo-box">3D</div>
             <span class="brand-title">Üç Dogan</span>
         </div>
-        <div class="lang-switcher">
-            <button class="lang-btn active" id="btnTM" onclick="changeLang('tk')">TM</button>
-            <button class="lang-btn" id="btnTR" onclick="changeLang('tr')">TR</button>
+        <div class="header-actions">
+            <button class="refresh-btn" onclick="hardRefresh()" title="Täzele">
+                <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            </button>
+            <div class="lang-switcher">
+                <button class="lang-btn active" id="btnTM" onclick="changeLang('tk')">TM</button>
+                <button class="lang-btn" id="btnTR" onclick="changeLang('tr')">TR</button>
+            </div>
         </div>
     </header>
 
@@ -463,6 +493,13 @@
             <span class="card-name" id="cat_nausniklar">Nauşniklar</span>
             <span style="font-size:11px; color:var(--text-sub);" id="sub_nausniklar">Arassa ses hili</span>
         </div>
+        <div class="card" onclick="openCategory('taze_harytlar')">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <span class="card-name" id="cat_taze_harytlar">Täze Harytlar</span>
+            <span style="font-size:11px; color:var(--text-sub);" id="sub_taze_harytlar">Iň soňky gelenler</span>
+        </div>
     </div>
 
     <div class="sheet-overlay" id="appModal" onclick="closeModal(event)">
@@ -494,7 +531,8 @@
                     zaryadniklar: { name: "Zarýadniklar", sub: "Çalt we howpsuz" },
                     udarniklar: { name: "Udarniklar", sub: "Gorag aýnalary" },
                     cehollar: { name: "Telefon daşlar (Cehol)", sub: "Gorag gaby" },
-                    nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili" }
+                    nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili" },
+                    taze_harytlar: { name: "Täze Harytlar", sub: "Iň soňky gelenler" }
                 },
                 products: {
                     telefonlar: [
@@ -518,38 +556,13 @@
                     ],
                     nausniklar: [
                         { name: "AirPods Pro 2", desc: "ANC we dury ses", price: "450 TMT", img: "" }
+                    ],
+                    taze_harytlar: [
+                        { name: "PowerBank Magsafe 10K", desc: "Simsiz çalt zarýad", price: "350 TMT", img: "" }
                     ]
                 }
             },
             tr: {
                 heroTitle: "Aksesuar Mağazası",
                 heroDesc: "Premium kalite mobil cihazlar ve aksesuarlar",
-                copyMsg: "Kopyalandı!",
-                backBtn: "← Geri, ürün listesine",
-                payTitle: "Banka Ödeme Bilgileri",
-                payNotice: "Kopyalamak için istediğiniz bilginin üzerine tıklayın.",
-                payTotal: "Müşteri, [PRICE] ödeme yapmalıdır.",
-                waBtn: "Siparişi Bildir",
-                emptyMsg: "Ürün bulunamadı.",
-                categories: {
-                    telefonlar: { name: "Telefonlar", sub: "Yeni modeller" },
-                    kalonkalar: { name: "Hoparlörler", sub: "Güçlü akustik" },
-                    sagatlar: { name: "Saatler", sub: "Akıllı stiller" },
-                    zaryadniklar: { name: "Şarj Cihazları", sub: "Hızlı ve güvenli" },
-                    udarniklar: { name: "Kırılmaz Camlar", sub: "Ekran koruyucu" },
-                    cehollar: { name: "Telefon Kılıfları", sub: "Premium kılıflar" },
-                    nausniklar: { name: "Kulaklıklar", sub: "Net ses kalitesi" }
-                },
-                products: {
-                    telefonlar: [
-                        { name: "iPhone 15 Pro Max", desc: "256GB Sıfır Kutu", price: "12000 TMT", img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=150" },
-                        { name: "Samsung S24 Ultra", desc: "512GB Sıfır Kutu", price: "11500 TMT", img: "" }
-                    ],
-                    kalonkalar: [
-                        { name: "JBL Flip 6 Premium", desc: "Su geçirmez güçlü ses", price: "480 TMT", img: "" }
-                    ],
-                    sagatlar: [
-                        { name: "Watch Series 9 Ultra", desc: "Tüm fonksiyonlar aktif", price: "550 TMT", img: "" }
-                    ],
-                    zaryadniklar: [
-             
+                copyMsg: "Kop
