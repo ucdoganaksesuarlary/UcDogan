@@ -371,7 +371,44 @@
         <p id="heroDesc">Premium hilli mobil enjamlar we aksesuarlar</p>
     </section>
 
-    <div class="grid-container" id="menuGrid"></div>
+    <!-- Kategoriýalar HTML-iň özünde taýýar edildi, şonuň üçin kod doňup bilmez -->
+    <div class="grid-container" id="menuGrid">
+        <div class="card" onclick="openCategory('telefonlar')">
+            <div class="card-icon">📱</div>
+            <span class="card-name" id="cat_telefonlar">Telefonlar</span>
+            <span style="font-size:11px; color:var(--text-sub);" id="sub_telefonlar">Täze modeller</span>
+        </div>
+        <div class="card" onclick="openCategory('kalonkalar')">
+            <div class="card-icon">🔊</div>
+            <span class="card-name" id="cat_kalonkalar">Kalonkalar</span>
+            <span style="font-size:11px; color:var(--text-sub);" id="sub_kalonkalar">Güýçli akustika</span>
+        </div>
+        <div class="card" onclick="openCategory('sagatlar')">
+            <div class="card-icon">⌚</div>
+            <span class="card-name" id="cat_sagatlar">Sagatlar</span>
+            <span style="font-size:11px; color:var(--text-sub);" id="sub_sagatlar">Smart stiller</span>
+        </div>
+        <div class="card" onclick="openCategory('zaryadniklar')">
+            <div class="card-icon">⚡</div>
+            <span class="card-name" id="cat_zaryadniklar">Zarýadniklar</span>
+            <span style="font-size:11px; color:var(--text-sub);" id="sub_zaryadniklar">Çalt we howpsuz</span>
+        </div>
+        <div class="card" onclick="openCategory('udarniklar')">
+            <div class="card-icon">🛡️</div>
+            <span class="card-name" id="cat_udarniklar">Udarniklar</span>
+            <span style="font-size:11px; color:var(--text-sub);" id="sub_udarniklar">Gorag aýnalary</span>
+        </div>
+        <div class="card" onclick="openCategory('cehollar')">
+            <div class="card-icon">💼</div>
+            <span class="card-name" id="cat_cehollar">Telefon daşlar (Cehol)</span>
+            <span style="font-size:11px; color:var(--text-sub);" id="sub_cehollar">Gorag gaby</span>
+        </div>
+        <div class="card" onclick="openCategory('nausniklar')">
+            <div class="card-icon">🎧</div>
+            <span class="card-name" id="cat_nausniklar">Nauşniklar</span>
+            <span style="font-size:11px; color:var(--text-sub);" id="sub_nausniklar">Arassa ses hili</span>
+        </div>
+    </div>
 
     <div class="sheet-overlay" id="appModal" onclick="closeModal(event)">
         <div class="sheet-wrapper" onclick="event.stopPropagation()">
@@ -389,19 +426,18 @@
                 heroTitle: "Aksesuar Dükany",
                 heroDesc: "Premium hilli mobil enjamlar we aksesuarlar",
                 copyMsg: "Nusgalandy!",
-                backBtn: "Izyna, harytlar sanawyna",
                 payTitle: "Bank Töleg Maglumaty",
                 payNotice: "Nusgalamak üçin islendik maglumatyň üstüne basyň.",
                 payTotal: "Müşderi, [PRICE] töleg etmeli.",
                 waBtn: "Sargyt barada habar ber",
                 categories: {
-                    telefonlar: { name: "Telefonlar", sub: "Täze modeller", icon: "📱" },
-                    kalonkalar: { name: "Kalonkalar", sub: "Güýçli akustika", icon: "🔊" },
-                    sagatlar: { name: "Sagatlar", sub: "Smart stiller", icon: "⌚" },
-                    zaryadniklar: { name: "Zarýadniklar", sub: "Çalt we howpsuz", icon: "⚡" },
-                    udarniklar: { name: "Udarniklar", sub: "Gorag aýnalary", icon: "🛡️" },
-                    cehollar: { name: "Telefon daşlar (Cehol)", sub: "Gorag gaby", icon: "💼" },
-                    nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili", icon: "🎧" }
+                    telefonlar: { name: "Telefonlar", sub: "Täze modeller" },
+                    kalonkalar: { name: "Kalonkalar", sub: "Güýçli akustika" },
+                    sagatlar: { name: "Sagatlar", sub: "Smart stiller" },
+                    zaryadniklar: { name: "Zarýadniklar", sub: "Çalt we howpsuz" },
+                    udarniklar: { name: "Udarniklar", sub: "Gorag aýnalary" },
+                    cehollar: { name: "Telefon daşlar (Cehol)", sub: "Gorag gaby" },
+                    nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili" }
                 },
                 products: {
                     telefonlar: [
@@ -432,19 +468,18 @@
                 heroTitle: "Aksesuar Mağazası",
                 heroDesc: "Premium kalite mobil cihazlar ve aksesuarlar",
                 copyMsg: "Kopyalandı!",
-                backBtn: "Geri, ürün listesine",
                 payTitle: "Banka Ödeme Bilgileri",
                 payNotice: "Kopyalamak için istediğiniz bilginin üzerine tıklayın.",
                 payTotal: "Müşteri, [PRICE] ödeme yapmalıdır.",
                 waBtn: "Siparişi Bildir",
                 categories: {
-                    telefonlar: { name: "Telefonlar", sub: "Yeni modeller", icon: "📱" },
-                    kalonkalar: { name: "Hoparlörler", sub: "Güçlü akustik", icon: "🔊" },
-                    sagatlar: { name: "Saatler", sub: "Akıllı stiller", icon: "⌚" },
-                    zaryadniklar: { name: "Şarj Cihazları", sub: "Hızlı ve güvenli", icon: "⚡" },
-                    udarniklar: { name: "Kırılmaz Camlar", sub: "Ekran koruyucu", icon: "🛡️" },
-                    cehollar: { name: "Telefon Kılıfları", sub: "Premium kılıflar", icon: "💼" },
-                    nausniklar: { name: "Kulaklıklar", sub: "Net ses kalitesi", icon: "🎧" }
+                    telefonlar: { name: "Telefonlar", sub: "Yeni modeller" },
+                    kalonkalar: { name: "Hoparlörler", sub: "Güçlü akustik" },
+                    sagatlar: { name: "Saatler", sub: "Akıllı stiller" },
+                    zaryadniklar: { name: "Şarj Cihazları", sub: "Hızlı ve güvenli" },
+                    udarniklar: { name: "Kırılmaz Camlar", sub: "Ekran koruyucu" },
+                    cehollar: { name: "Telefon Kılıfları", sub: "Premium kılıflar" },
+                    nausniklar: { name: "Kulaklıklar", sub: "Net ses kalitesi" }
                 },
                 products: {
                     telefonlar: [
@@ -479,34 +514,25 @@
         const accountOwner = "AMAN HAYITMURADOV";
         const whatsappNumber = "99364041065";
 
-        function renderMenu() {
+        function updateTexts() {
             const langData = localization[currentLang];
-            const gridContainer = document.getElementById('menuGrid');
-            
-            if(!gridContainer) return;
-
             document.getElementById('heroTitle').innerText = langData.heroTitle;
             document.getElementById('heroDesc').innerText = langData.heroDesc;
 
-            let gridHtml = "";
+            // Kategoriýa atlaryny dildäki ýaly täzelemek
             Object.keys(langData.categories).forEach(key => {
-                const cat = langData.categories[key];
-                gridHtml += `
-                    <div class="card" onclick="openCategory('${key}')">
-                        <div class="card-icon">${cat.icon}</div>
-                        <span class="card-name">${cat.name}</span>
-                        <span style="font-size:11px; color:var(--text-sub);">${cat.sub}</span>
-                    </div>
-                `;
+                const catNameEl = document.getElementById(`cat_${key}`);
+                const catSubEl = document.getElementById(`sub_${key}`);
+                if (catNameEl) catNameEl.innerText = langData.categories[key].name;
+                if (catSubEl) catSubEl.innerText = langData.categories[key].sub;
             });
-            gridContainer.innerHTML = gridHtml;
         }
 
         function changeLang(lang) {
             currentLang = lang;
             document.getElementById('btnTM').classList.toggle('active', lang === 'tk');
             document.getElementById('btnTR').classList.toggle('active', lang === 'tr');
-            renderMenu();
+            updateTexts();
             if(document.getElementById('appModal').classList.contains('open') && currentCategory) {
                 openCategory(currentCategory);
             }
@@ -529,35 +555,4 @@
                         <div class="item-row" onclick="openPayment('${key}', ${index})">
                             <div class="item-info">
                                 <span class="item-title">${p.name}</span>
-                                <span class="item-desc">${p.desc}</span>
-                            </div>
-                            <span class="item-price">${p.price}</span>
-                        </div>
-                    `;
-                });
-            }
-            bodyHtml += '</div>';
-
-            document.getElementById('modalBody').innerHTML = bodyHtml;
-            document.getElementById('appModal').classList.add('open');
-        }
-
-        function openPayment(catKey, prodIndex) {
-            const langData = localization[currentLang];
-            const prod = langData.products[catKey][prodIndex];
-            
-            let payBoxHtml = `
-                <div class="info-card">
-                    <span style="font-size:12px; font-weight:700; color:var(--gold); text-transform:uppercase;">${langData.payTitle}</span>
-                    <div class="info-row" onclick="copyText('${accountOwner}')">Eýesi: ${accountOwner}</div>
-                    <div class="info-row" onclick="copyText('${ibanNumber}')" style="letter-spacing:1px; font-size:13px;">${ibanNumber}</div>
-                    <p style="font-size:11px; color:var(--text-sub); text-align:center; margin-top:10px;">${langData.payNotice}</p>
-                </div>
-                
-                <div class="price-banner">
-                    ${langData.payTotal.replace('[PRICE]', prod.price)}
-                </div>
-
-                <button class="action-btn" onclick="sendOrder('${prod.name}', '${prod.price}')">
-                    <svg viewBox="0 0 24 24" style="width:20px; height:20px; fill:currentColor;">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.949-1.587-6.246.003-6.39
+              
