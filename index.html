@@ -82,7 +82,8 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            z-index: 1001;
         }
 
         .refresh-btn {
@@ -96,6 +97,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .refresh-btn:active {
+            background: rgba(212, 175, 55, 0.2);
         }
 
         .refresh-btn svg {
@@ -202,6 +208,7 @@
             color: var(--text-main);
         }
 
+        /* PROBLEMANY ÇÖZEN SÖZLEŞME: Ekran bökdemez ýaly display: none goşuldy */
         .sheet-overlay {
             position: fixed;
             top: 0;
@@ -212,17 +219,16 @@
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             z-index: 2000;
-            display: flex;
+            display: none;
             align-items: flex-end;
             justify-content: center;
             opacity: 0;
-            pointer-events: none;
             transition: opacity 0.3s ease;
         }
 
         .sheet-overlay.open {
+            display: flex;
             opacity: 1;
-            pointer-events: auto;
         }
 
         .sheet-wrapper {
@@ -493,13 +499,6 @@
             <span class="card-name" id="cat_nausniklar">Nauşniklar</span>
             <span style="font-size:11px; color:var(--text-sub);" id="sub_nausniklar">Arassa ses hili</span>
         </div>
-        <div class="card" onclick="openCategory('taze_harytlar')">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-            </div>
-            <span class="card-name" id="cat_taze_harytlar">Täze Harytlar</span>
-            <span style="font-size:11px; color:var(--text-sub);" id="sub_taze_harytlar">Iň soňky gelenler</span>
-        </div>
     </div>
 
     <div class="sheet-overlay" id="appModal" onclick="closeModal(event)">
@@ -531,8 +530,7 @@
                     zaryadniklar: { name: "Zarýadniklar", sub: "Çalt we howpsuz" },
                     udarniklar: { name: "Udarniklar", sub: "Gorag aýnalary" },
                     cehollar: { name: "Telefon daşlar (Cehol)", sub: "Gorag gaby" },
-                    nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili" },
-                    taze_harytlar: { name: "Täze Harytlar", sub: "Iň soňky gelenler" }
+                    nausniklar: { name: "Nauşniklar", sub: "Arassa ses hili" }
                 },
                 products: {
                     telefonlar: [
@@ -556,13 +554,19 @@
                     ],
                     nausniklar: [
                         { name: "AirPods Pro 2", desc: "ANC we dury ses", price: "450 TMT", img: "" }
-                    ],
-                    taze_harytlar: [
-                        { name: "PowerBank Magsafe 10K", desc: "Simsiz çalt zarýad", price: "350 TMT", img: "" }
                     ]
                 }
             },
             tr: {
                 heroTitle: "Aksesuar Mağazası",
                 heroDesc: "Premium kalite mobil cihazlar ve aksesuarlar",
-                copyMsg: "Kop
+                copyMsg: "Kopyalandı!",
+                backBtn: "← Geri, ürün listesine",
+                payTitle: "Banka Ödeme Bilgileri",
+                payNotice: "Kopyalamak için istediğiniz bilginin üzerine tıklayın.",
+                payTotal: "Müşteri, [PRICE] ödeme yapmalıdır.",
+                waBtn: "Siparişi Bildir",
+                emptyMsg: "Ürün bulunamadı.",
+                categories: {
+                    telefonlar: { name: "Telefonlar", sub: "Yeni modeller" },
+                    kalonkal
