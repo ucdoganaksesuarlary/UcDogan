@@ -371,8 +371,7 @@
         <p id="heroDesc">Premium hilli mobil enjamlar we aksesuarlar</p>
     </section>
 
-    <div class="grid-container" id="menuGrid">
-        </div>
+    <div class="grid-container" id="menuGrid"></div>
 
     <div class="sheet-overlay" id="appModal" onclick="closeModal(event)">
         <div class="sheet-wrapper" onclick="event.stopPropagation()">
@@ -380,8 +379,7 @@
                 <h2 class="sheet-title" id="modalTitle">Kategoriýa</h2>
                 <button class="close-sheet" onclick="closeModal(null, true)">✕</button>
             </div>
-            <div id="modalBody">
-                </div>
+            <div id="modalBody"></div>
         </div>
     </div>
 
@@ -423,7 +421,7 @@
                         { name: "Green Lion 9H Glass", desc: "9H berk gorag", price: "80 TMT" }
                     ],
                     cehollar: [
-                        { name: "iPhone 15 Pro Silicone Case", desc: "Magsafe nusga", price: "180 TMT" }
+                        { name: "iPhone 15 Pro Silicone Case", desc: "Magsafe goldawly", price: "180 TMT" }
                     ],
                     nausniklar: [
                         { name: "AirPods Pro 2", desc: "ANC we dury ses", price: "450 TMT" }
@@ -454,7 +452,7 @@
                         { name: "Samsung S24 Ultra", desc: "512GB Sifir Kutu", price: "11500 TMT" }
                     ],
                     kalonkalar: [
-                        { name: "JBL Flip 6 Premium", desc: "Su gecirmez guclu ses", price: "480 TMT" }
+                        { name: "JBL Flip 6 Premium", desc: "Su gecirmez guclu ses", price: "400 TMT" }
                     ],
                     sagatlar: [
                         { name: "Watch Series 9 Ultra", desc: "Tum fonksiyonlar aktif", price: "550 TMT" }
@@ -483,6 +481,10 @@
 
         function renderMenu() {
             const langData = localization[currentLang];
+            const gridContainer = document.getElementById('menuGrid');
+            
+            if(!gridContainer) return;
+
             document.getElementById('heroTitle').innerText = langData.heroTitle;
             document.getElementById('heroDesc').innerText = langData.heroDesc;
 
@@ -497,7 +499,7 @@
                     </div>
                 `;
             });
-            document.getElementById('menuGrid').innerHTML = gridHtml;
+            gridContainer.innerHTML = gridHtml;
         }
 
         function changeLang(lang) {
@@ -558,4 +560,4 @@
 
                 <button class="action-btn" onclick="sendOrder('${prod.name}', '${prod.price}')">
                     <svg viewBox="0 0 24 24" style="width:20px; height:20px; fill:currentColor;">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.184.001 6.177 1.239 8.426 3.49s3.486 5.244 3.486 8.428c-.0
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.949-1.587-6.246.003-6.39
