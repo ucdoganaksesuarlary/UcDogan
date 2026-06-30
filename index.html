@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMAN HAYITMURADOV | ÜÇ DOGAN</title>
-    <!-- Has Realny we Professional Ikonkalar Üçin Remix Icon -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <title>ÜÇ DOGAN | Premium Aksesuar</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Esasy Sazlamalar */
+        /* Ähli elementleri nollamak */
         * {
             margin: 0;
             padding: 0;
@@ -19,12 +17,12 @@
         }
 
         body {
-            background-color: #0b0b0b;
+            background-color: #0b0b0b; /* Asyl gara fon */
             color: #ffffff;
             padding-bottom: 50px;
         }
 
-        /* Header / Menu */
+        /* 1-nji suratdaky ýaly hakyky professional Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -40,7 +38,7 @@
         }
 
         .logo-box {
-            border: 2px solid #d4af37;
+            border: 2px solid #d4af37; /* Altyn ramka */
             border-radius: 10px;
             padding: 4px 10px;
             font-weight: 700;
@@ -52,8 +50,8 @@
         .brand-name {
             font-size: 20px;
             font-weight: 700;
-            color: #d4af37;
-            letter-spacing: 1px;
+            color: #d4af37; /* Altyn ýazgy */
+            letter-spacing: 1.5px;
         }
 
         .header-right {
@@ -69,11 +67,11 @@
             padding: 9px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
         }
         
         .refresh-btn:active {
@@ -124,7 +122,7 @@
             font-size: 14px;
         }
 
-        /* Kategoriýalar Grid */
+        /* Grid gurluşy (Düzüwli 2 sütün) */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -132,19 +130,19 @@
             padding: 0 6%;
         }
 
-        /* Kartlar */
+        /* Kartlaryň dizaýny */
         .card {
             background-color: #121212;
             border-radius: 24px;
             padding: 35px 20px;
             text-align: center;
             border: 1px solid #1a1a1a;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
+        /* Saýlanan kart (Telefonlar çep tarap) */
         .card.featured {
             border-color: #d4af37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
         }
 
         .card:hover {
@@ -152,6 +150,7 @@
             transform: translateY(-2px);
         }
 
+        /* Tegelek Ikonka Gabasy */
         .icon-wrapper {
             background-color: #1a1a1a;
             width: 64px;
@@ -164,9 +163,12 @@
             border: 1px solid #262626;
         }
 
+        /* Ikonkalaryň hakyky durky we professional reňki */
         .icon-wrapper i {
-            font-size: 26px; /* Has anyk we realny görünüş */
+            font-size: 26px;
             color: #ffffff;
+            display: inline-block;
+            line-height: 1;
         }
 
         .card h3 {
@@ -177,14 +179,13 @@
         }
 
         .card p {
-            color: #666;
+            color: #555;
             font-size: 12px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="header-left">
             <div class="logo-box">3D</div>
@@ -199,64 +200,56 @@
         </div>
     </header>
 
-    <!-- Baş Sözbaşy -->
     <section class="hero-section">
         <h1 id="main-title">Aksesuar Dükany</h1>
         <p id="main-desc">Premium hilli mobil enjamlar we aksesuarlar</p>
     </section>
 
-    <!-- Grid Kartlar -->
     <main class="categories-grid">
         
-        <!-- Telefonlar -->
         <div class="card featured">
             <div class="icon-wrapper">
-                <i class="ri-phone-find-line"></i> <!-- Anyk smartfon şekili -->
+                <i class="ri-smartphone-line"></i>
             </div>
             <h3 id="cat-1-title">Telefonlar</h3>
             <p id="cat-1-desc">Täze modeller</p>
         </div>
 
-        <!-- Kalonkalar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="ri-surround-sound-line"></i> <!-- Hakyky audio akustik kalonka şekili -->
+                <i class="ri-speaker-3-line"></i>
             </div>
             <h3 id="cat-2-title">Kalonkalar</h3>
             <p id="cat-2-desc">Güýçli akustika</p>
         </div>
 
-        <!-- Sagatlar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="ri-watch-line"></i> <!-- Professional Smart-sagat şekili -->
+                <i class="ri-watch-2-line"></i>
             </div>
             <h3 id="cat-3-title">Sagatlar</h3>
             <p id="cat-3-desc">Smart stiller</p>
         </div>
 
-        <!-- Zarýadniklar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="ri-charging-pile-2-line"></i> <!-- Ýokary hilli çalt zarýad we güýç şekili -->
+                <i class="ri-charging-pile-line"></i>
             </div>
             <h3 id="cat-4-title">Zarýadniklar</h3>
             <p id="cat-4-desc">Çalt we howpsuz</p>
         </div>
 
-        <!-- Udarniklar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="ri-shield-flash-line"></i> <!-- Gorag aýnasy we güýçli udarnik simwoly -->
+                <i class="ri-shield-check-line"></i>
             </div>
             <h3 id="cat-5-title">Udarniklar</h3>
             <p id="cat-5-desc">Ýokary gorag</p>
         </div>
 
-        <!-- Telefon daşlar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="ri-smartphone-line"></i> <!-- Telefon kılıfyny / daşyny aňlatýan ýörite inçe korpus şekili -->
+                <i class="ri-phone-case-line"></i>
             </div>
             <h3 id="cat-6-title">Telefon daşlar</h3>
             <p id="cat-6-desc">Döwrebap dizaýn</p>
@@ -264,7 +257,6 @@
 
     </main>
 
-    <!-- JavaScript Kodlary -->
     <script>
         const translations = {
             tm: {
