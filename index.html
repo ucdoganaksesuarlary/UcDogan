@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÜÇ DOGAN | Aksesuar Dükany</title>
+    <title>AMAN HAYITMURADOV | ÜÇ DOGAN</title>
     <!-- FontAwesome Ikonlar Üçin -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Ähli elementleri nollamak */
+        /* Esasy Sazlamalar */
         * {
             margin: 0;
             padding: 0;
@@ -19,12 +19,12 @@
         }
 
         body {
-            background-color: #0b0b0b; /* Dolu gara fon */
+            background-color: #0b0b0b; /* Mukaddes we premium gara fon */
             color: #ffffff;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
         }
 
-        /* Header Bölümi */
+        /* Header / Brend dizaýny */
         header {
             display: flex;
             justify-content: space-between;
@@ -40,7 +40,7 @@
         }
 
         .logo-box {
-            border: 2px solid #d4af37; /* Altyn ramka */
+            border: 2px solid #d4af37;
             border-radius: 10px;
             padding: 4px 10px;
             font-weight: 700;
@@ -101,7 +101,7 @@
         /* Baş Sözbaşy */
         .hero-section {
             text-align: center;
-            margin: 45px 0 35px 0;
+            margin: 40px 0 30px 0;
             padding: 0 20px;
         }
 
@@ -125,14 +125,21 @@
             padding: 0 6%;
         }
 
-        /* Kartlaryň premium dizaýny */
+        /* Kartlaryň Premium Dizaýny */
         .card {
-            background-color: #121212; /* Suratdaky reňk */
+            background-color: #121212;
             border-radius: 24px;
             padding: 35px 20px;
             text-align: center;
             border: 1px solid #1a1a1a;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        /* Saýlanan ýa-da işjeň kart üçin altyn çyzyk (Border Highlight) */
+        .card.featured {
+            border-color: #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
         }
 
         .card:hover {
@@ -165,7 +172,7 @@
         }
 
         .card p {
-            color: #555;
+            color: #666;
             font-size: 12px;
         }
     </style>
@@ -193,11 +200,11 @@
         <p>Premium hilli mobil enjamlar we aksesuarlar</p>
     </section>
 
-    <!-- Kartlar -->
+    <!-- Kartlar Gurluşy -->
     <main class="categories-grid">
         
-        <!-- Telefonlar -->
-        <div class="card">
+        <!-- Telefonlar (Saýlanan/Altyn borderli) -->
+        <div class="card featured">
             <div class="icon-wrapper">
                 <i class="fa-solid fa-mobile-screen-button"></i>
             </div>
@@ -252,6 +259,5 @@
 
     </main>
 
-    <!-- Developed by AMAN HAYITMURADOV -->
 </body>
 </html>
