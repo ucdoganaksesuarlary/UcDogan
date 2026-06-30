@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMAN HAYITMURADOV | ÜÇ DOGAN</title>
-    <!-- FontAwesome diňe refresh we dil paneli üçin galdyryldy -->
+    <!-- FontAwesome - Diňe kömekçi elementler üçin -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -152,25 +152,27 @@
             transform: translateY(-2px);
         }
 
-        /* Hakyky Suratlar Üçin Tegelek Gabasy */
+        /* Hakyky Önüm Suratlary Üçin Tegelek Gaba */
         .icon-wrapper {
             background-color: #1a1a1a;
-            width: 64px;
-            height: 64px;
+            width: 80px; /* Suratlaryň professional görünmegi üçin azda-kand uldaltdym */
+            height: 80px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto 18px auto;
             border: 1px solid #262626;
-            overflow: hidden; /* Suratyň tegelekden çykmazlygy üçin */
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.05); /* Premium neon öwüşgin */
+            overflow: hidden;
         }
 
-        /* Surat Sazlamalary */
+        /* Suratlaryň Gaplaňyş Sazlamalary */
         .icon-wrapper img {
-            width: 60%;  /* Suratyň ululygy */
-            height: 60%;
-            object-fit: contain; /* Surat professional gysylman dursun */
+            width: 75%;  
+            height: 75%;
+            object-fit: contain; /* Gysylman, arassa hakyky durky */
+            filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.5)); /* Önüme hakyky gölgediriji effect */
         }
 
         .card h3 {
@@ -215,7 +217,7 @@
         <!-- Telefonlar -->
         <div class="card featured">
             <div class="icon-wrapper">
-                <img src="telefon.png" alt="Telefonlar">
+                <img src="https://i.ibb.co/L6p0Qj4/phone-premium.png" alt="Telefonlar">
             </div>
             <h3 id="cat-1-title">Telefonlar</h3>
             <p id="cat-1-desc">Täze modeller</p>
@@ -224,7 +226,7 @@
         <!-- Kalonkalar -->
         <div class="card">
             <div class="icon-wrapper">
-                <img src="kalonka.png" alt="Kalonkalar">
+                <img src="https://i.ibb.co/M738VfQ/speaker-premium.png" alt="Kalonkalar">
             </div>
             <h3 id="cat-2-title">Kalonkalar</h3>
             <p id="cat-2-desc">Güýçli akustika</p>
@@ -233,7 +235,7 @@
         <!-- Sagatlar -->
         <div class="card">
             <div class="icon-wrapper">
-                <img src="sagat.png" alt="Sagatlar">
+                <img src="https://i.ibb.co/mH6fX4j/watch-premium.png" alt="Sagatlar">
             </div>
             <h3 id="cat-3-title">Sagatlar</h3>
             <p id="cat-3-desc">Smart stiller</p>
@@ -242,7 +244,7 @@
         <!-- Zarýadniklar -->
         <div class="card">
             <div class="icon-wrapper">
-                <img src="zaryadnik.png" alt="Zarýadniklar">
+                <img src="https://i.ibb.co/Xz9R94p/charger-premium.png" alt="Zarýadniklar">
             </div>
             <h3 id="cat-4-title">Zarýadniklar</h3>
             <p id="cat-4-desc">Çalt we howpsuz</p>
@@ -251,7 +253,7 @@
         <!-- Udarniklar -->
         <div class="card">
             <div class="icon-wrapper">
-                <img src="udarnik.png" alt="Udarniklar">
+                <img src="https://i.ibb.co/L8vbyg5/glass-premium.png" alt="Udarniklar">
             </div>
             <h3 id="cat-5-title">Udarniklar</h3>
             <p id="cat-5-desc">Ýokary gorag</p>
@@ -260,7 +262,7 @@
         <!-- Telefon daşlar -->
         <div class="card">
             <div class="icon-wrapper">
-                <img src="kilyf.png" alt="Telefon daşlar">
+                <img src="https://i.ibb.co/3kWyvS9/case-premium.png" alt="Telefon daşlar">
             </div>
             <h3 id="cat-6-title">Telefon daşlar</h3>
             <p id="cat-6-desc">Döwrebap dizaýn</p>
@@ -268,7 +270,7 @@
 
     </main>
 
-    <!-- JavaScript Kodlary (Dil we Refresh gup-gurat) -->
+    <!-- JavaScript Kodlary -->
     <script>
         const translations = {
             tm: {
