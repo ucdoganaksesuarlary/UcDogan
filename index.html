@@ -4,15 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ÜÇ DOGAN | Aksesuar Dükany</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome ikonlar üçin -->
+    <!-- FontAwesome Ikonlar Üçin -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Ähli elementleri nollamak */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b; /* Dolu gara fon */
+            color: #ffffff;
+            padding-bottom: 40px;
+        }
+
+        /* Header Bölümi */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background-color: #0b0b0b;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            border: 2px solid #d4af37; /* Altyn ramka */
+            border-radius: 10px;
+            padding: 4px 10px;
+            font-weight: 700;
+            color: #d4af37;
+            font-size: 16px;
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .brand-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #d4af37;
+            letter-spacing: 1px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .refresh-btn {
+            background: none;
+            border: 1px solid #222;
+            color: #fff;
+            padding: 9px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-switch {
+            background-color: #161616;
+            border-radius: 25px;
+            padding: 4px;
+            display: flex;
+            gap: 4px;
+            border: 1px solid #222;
+        }
+
+        .lang {
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #777;
+            font-weight: 700;
+        }
+
+        .lang.active {
+            background: linear-gradient(135deg, #f3cf65, #d4af37);
+            color: #000;
+        }
+
+        /* Baş Sözbaşy */
+        .hero-section {
+            text-align: center;
+            margin: 45px 0 35px 0;
+            padding: 0 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-section p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Kategoriýalar Grid (2 Sütünli) */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding: 0 6%;
+        }
+
+        /* Kartlaryň premium dizaýny */
+        .card {
+            background-color: #121212; /* Suratdaky reňk */
+            border-radius: 24px;
+            padding: 35px 20px;
+            text-align: center;
+            border: 1px solid #1a1a1a;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+        .icon-wrapper {
+            background-color: #1a1a1a;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 18px auto;
+            border: 1px solid #262626;
+        }
+
+        .icon-wrapper i {
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header Bölümi -->
+    <!-- Header / Menu -->
     <header>
         <div class="header-left">
             <div class="logo-box">3D</div>
@@ -27,13 +187,13 @@
         </div>
     </header>
 
-    <!-- Baş Söz we Sözbaşy -->
+    <!-- Hero Bölümi -->
     <section class="hero-section">
         <h1>Aksesuar Dükany</h1>
         <p>Premium hilli mobil enjamlar we aksesuarlar</p>
     </section>
 
-    <!-- Kategoriýalar Grid -->
+    <!-- Kartlar -->
     <main class="categories-grid">
         
         <!-- Telefonlar -->
@@ -92,8 +252,6 @@
 
     </main>
 
-    <!-- Developer Footer (Kod Arassalygy Üçin Meta) -->
     <!-- Developed by AMAN HAYITMURADOV -->
-
 </body>
 </html>
