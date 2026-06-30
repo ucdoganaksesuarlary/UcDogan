@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMAN HAYITMURADOV | ÜÇ DOGAN</title>
-    <!-- FontAwesome Ikonlar Üçin -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Has Realny we Professional Ikonkalar Üçin Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
@@ -165,7 +165,7 @@
         }
 
         .icon-wrapper i {
-            font-size: 24px;
+            font-size: 26px; /* Has anyk we realny görünüş */
             color: #ffffff;
         }
 
@@ -191,9 +191,7 @@
             <span class="brand-name">ÜÇ DOGAN</span>
         </div>
         <div class="header-right">
-            <!-- Refresh Düwmesi -->
-            <button class="refresh-btn" id="refreshBtn"><i class="fa-solid fa-arrows-rotate"></i></button>
-            <!-- Dil Çalyşma Paneli -->
+            <button class="refresh-btn" id="refreshBtn"><i class="ri-refresh-line"></i></button>
             <div class="lang-switch">
                 <span class="lang active" id="lang-tm" onclick="switchLanguage('tm')">TM</span>
                 <span class="lang" id="lang-tr" onclick="switchLanguage('tr')">TR</span>
@@ -213,7 +211,7 @@
         <!-- Telefonlar -->
         <div class="card featured">
             <div class="icon-wrapper">
-                <i class="fa-solid fa-mobile-screen-button"></i>
+                <i class="ri-phone-find-line"></i> <!-- Anyk smartfon şekili -->
             </div>
             <h3 id="cat-1-title">Telefonlar</h3>
             <p id="cat-1-desc">Täze modeller</p>
@@ -222,7 +220,7 @@
         <!-- Kalonkalar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="fa-solid fa-circle-dot"></i>
+                <i class="ri-surround-sound-line"></i> <!-- Hakyky audio akustik kalonka şekili -->
             </div>
             <h3 id="cat-2-title">Kalonkalar</h3>
             <p id="cat-2-desc">Güýçli akustika</p>
@@ -231,7 +229,7 @@
         <!-- Sagatlar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="fa-solid fa-clock"></i>
+                <i class="ri-watch-line"></i> <!-- Professional Smart-sagat şekili -->
             </div>
             <h3 id="cat-3-title">Sagatlar</h3>
             <p id="cat-3-desc">Smart stiller</p>
@@ -240,7 +238,7 @@
         <!-- Zarýadniklar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="fa-solid fa-bolt"></i>
+                <i class="ri-charging-pile-2-line"></i> <!-- Ýokary hilli çalt zarýad we güýç şekili -->
             </div>
             <h3 id="cat-4-title">Zarýadniklar</h3>
             <p id="cat-4-desc">Çalt we howpsuz</p>
@@ -249,7 +247,7 @@
         <!-- Udarniklar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="fa-solid fa-shield-halved"></i>
+                <i class="ri-shield-flash-line"></i> <!-- Gorag aýnasy we güýçli udarnik simwoly -->
             </div>
             <h3 id="cat-5-title">Udarniklar</h3>
             <p id="cat-5-desc">Ýokary gorag</p>
@@ -258,7 +256,7 @@
         <!-- Telefon daşlar -->
         <div class="card">
             <div class="icon-wrapper">
-                <i class="fa-solid fa-briefcase"></i>
+                <i class="ri-smartphone-line"></i> <!-- Telefon kılıfyny / daşyny aňlatýan ýörite inçe korpus şekili -->
             </div>
             <h3 id="cat-6-title">Telefon daşlar</h3>
             <p id="cat-6-desc">Döwrebap dizaýn</p>
@@ -268,7 +266,6 @@
 
     <!-- JavaScript Kodlary -->
     <script>
-        // Dil maglumatlar binasy
         const translations = {
             tm: {
                 title: "Aksesuar Dükany",
@@ -292,14 +289,11 @@
             }
         };
 
-        // Dil çalşyrmak funksiýasy
         function switchLanguage(lang) {
-            // Aktiw klaslary üýtgetmek
             document.getElementById('lang-tm').classList.remove('active');
             document.getElementById('lang-tr').classList.remove('active');
             document.getElementById('lang-' + lang).classList.add('active');
 
-            // Sahypanyň içindäki tekstleri çalyşmak
             document.getElementById('main-title').innerText = translations[lang].title;
             document.getElementById('main-desc').innerText = translations[lang].desc;
             
@@ -322,13 +316,10 @@
             document.getElementById('cat-6-desc').innerText = translations[lang].cat6D;
         }
 
-        // Refresh (Täzelemek) düwmesiniň funksiýasy
         document.getElementById('refreshBtn').addEventListener('click', function() {
-            // Sahypany gaýtadan ýükleýär
             location.reload();
         });
     </script>
 
 </body>
 </html>
-
