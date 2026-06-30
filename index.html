@@ -19,12 +19,12 @@
         }
 
         body {
-            background-color: #0b0b0b; /* Mukaddes we premium gara fon */
+            background-color: #0b0b0b;
             color: #ffffff;
             padding-bottom: 50px;
         }
 
-        /* Header / Brend dizaýny */
+        /* Header / Menu */
         header {
             display: flex;
             justify-content: space-between;
@@ -73,6 +73,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .refresh-btn:active {
+            transform: rotate(180deg);
         }
 
         .lang-switch {
@@ -91,6 +96,8 @@
             cursor: pointer;
             color: #777;
             font-weight: 700;
+            user-select: none;
+            transition: all 0.2s ease;
         }
 
         .lang.active {
@@ -117,7 +124,7 @@
             font-size: 14px;
         }
 
-        /* Kategoriýalar Grid (2 Sütünli) */
+        /* Kategoriýalar Grid */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -125,7 +132,7 @@
             padding: 0 6%;
         }
 
-        /* Kartlaryň Premium Dizaýny */
+        /* Kartlar */
         .card {
             background-color: #121212;
             border-radius: 24px;
@@ -133,10 +140,8 @@
             text-align: center;
             border: 1px solid #1a1a1a;
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-            position: relative;
         }
 
-        /* Saýlanan ýa-da işjeň kart üçin altyn çyzyk (Border Highlight) */
         .card.featured {
             border-color: #d4af37;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
@@ -179,37 +184,39 @@
 </head>
 <body>
 
-    <!-- Header / Menu -->
+    <!-- Header -->
     <header>
         <div class="header-left">
             <div class="logo-box">3D</div>
             <span class="brand-name">ÜÇ DOGAN</span>
         </div>
         <div class="header-right">
-            <button class="refresh-btn"><i class="fa-solid fa-arrows-rotate"></i></button>
+            <!-- Refresh Düwmesi -->
+            <button class="refresh-btn" id="refreshBtn"><i class="fa-solid fa-arrows-rotate"></i></button>
+            <!-- Dil Çalyşma Paneli -->
             <div class="lang-switch">
-                <span class="lang active">TM</span>
-                <span class="lang">TR</span>
+                <span class="lang active" id="lang-tm" onclick="switchLanguage('tm')">TM</span>
+                <span class="lang" id="lang-tr" onclick="switchLanguage('tr')">TR</span>
             </div>
         </div>
     </header>
 
-    <!-- Hero Bölümi -->
+    <!-- Baş Sözbaşy -->
     <section class="hero-section">
-        <h1>Aksesuar Dükany</h1>
-        <p>Premium hilli mobil enjamlar we aksesuarlar</p>
+        <h1 id="main-title">Aksesuar Dükany</h1>
+        <p id="main-desc">Premium hilli mobil enjamlar we aksesuarlar</p>
     </section>
 
-    <!-- Kartlar Gurluşy -->
+    <!-- Grid Kartlar -->
     <main class="categories-grid">
         
-        <!-- Telefonlar (Saýlanan/Altyn borderli) -->
+        <!-- Telefonlar -->
         <div class="card featured">
             <div class="icon-wrapper">
                 <i class="fa-solid fa-mobile-screen-button"></i>
             </div>
-            <h3>Telefonlar</h3>
-            <p>Täze modeller</p>
+            <h3 id="cat-1-title">Telefonlar</h3>
+            <p id="cat-1-desc">Täze modeller</p>
         </div>
 
         <!-- Kalonkalar -->
@@ -217,8 +224,8 @@
             <div class="icon-wrapper">
                 <i class="fa-solid fa-circle-dot"></i>
             </div>
-            <h3>Kalonkalar</h3>
-            <p>Güýçli akustika</p>
+            <h3 id="cat-2-title">Kalonkalar</h3>
+            <p id="cat-2-desc">Güýçli akustika</p>
         </div>
 
         <!-- Sagatlar -->
@@ -226,8 +233,8 @@
             <div class="icon-wrapper">
                 <i class="fa-solid fa-clock"></i>
             </div>
-            <h3>Sagatlar</h3>
-            <p>Smart stiller</p>
+            <h3 id="cat-3-title">Sagatlar</h3>
+            <p id="cat-3-desc">Smart stiller</p>
         </div>
 
         <!-- Zarýadniklar -->
@@ -235,8 +242,8 @@
             <div class="icon-wrapper">
                 <i class="fa-solid fa-bolt"></i>
             </div>
-            <h3>Zarýadniklar</h3>
-            <p>Çalt we howpsuz</p>
+            <h3 id="cat-4-title">Zarýadniklar</h3>
+            <p id="cat-4-desc">Çalt we howpsuz</p>
         </div>
 
         <!-- Udarniklar -->
@@ -244,8 +251,8 @@
             <div class="icon-wrapper">
                 <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h3>Udarniklar</h3>
-            <p>Ýokary gorag</p>
+            <h3 id="cat-5-title">Udarniklar</h3>
+            <p id="cat-5-desc">Ýokary gorag</p>
         </div>
 
         <!-- Telefon daşlar -->
@@ -253,11 +260,75 @@
             <div class="icon-wrapper">
                 <i class="fa-solid fa-briefcase"></i>
             </div>
-            <h3>Telefon daşlar</h3>
-            <p>Döwrebap dizaýn</p>
+            <h3 id="cat-6-title">Telefon daşlar</h3>
+            <p id="cat-6-desc">Döwrebap dizaýn</p>
         </div>
 
     </main>
 
+    <!-- JavaScript Kodlary -->
+    <script>
+        // Dil maglumatlar binasy
+        const translations = {
+            tm: {
+                title: "Aksesuar Dükany",
+                desc: "Premium hilli mobil enjamlar we aksesuarlar",
+                cat1T: "Telefonlar", cat1D: "Täze modeller",
+                cat2T: "Kalonkalar", cat2D: "Güýçli akustika",
+                cat3T: "Sagatlar", cat3D: "Smart stiller",
+                cat4T: "Zarýadniklar", cat4D: "Çalt we howpsuz",
+                cat5T: "Udarniklar", cat5D: "Ýokary gorag",
+                cat6T: "Telefon daşlar", cat6D: "Döwrebap dizaýn"
+            },
+            tr: {
+                title: "Aksesuar Dünyası",
+                desc: "Premium kalite mobil cihazlar ve aksesuarlar",
+                cat1T: "Telefonlar", cat1D: "Yeni modeller",
+                cat2T: "Hoparlörler", cat2D: "Güçlü akustik",
+                cat3T: "Saatler", cat3D: "Akıllı stiller",
+                cat4T: "Şarj Cihazları", cat4D: "Hızlı ve güvenli",
+                cat5T: "Ekran Koruyucular", cat5D: "Yüksek koruma",
+                cat6T: "Telefon Kılıfları", cat6D: "Modern tasarım"
+            }
+        };
+
+        // Dil çalşyrmak funksiýasy
+        function switchLanguage(lang) {
+            // Aktiw klaslary üýtgetmek
+            document.getElementById('lang-tm').classList.remove('active');
+            document.getElementById('lang-tr').classList.remove('active');
+            document.getElementById('lang-' + lang).classList.add('active');
+
+            // Sahypanyň içindäki tekstleri çalyşmak
+            document.getElementById('main-title').innerText = translations[lang].title;
+            document.getElementById('main-desc').innerText = translations[lang].desc;
+            
+            document.getElementById('cat-1-title').innerText = translations[lang].cat1T;
+            document.getElementById('cat-1-desc').innerText = translations[lang].cat1D;
+            
+            document.getElementById('cat-2-title').innerText = translations[lang].cat2T;
+            document.getElementById('cat-2-desc').innerText = translations[lang].cat2D;
+            
+            document.getElementById('cat-3-title').innerText = translations[lang].cat3T;
+            document.getElementById('cat-3-desc').innerText = translations[lang].cat3D;
+            
+            document.getElementById('cat-4-title').innerText = translations[lang].cat4T;
+            document.getElementById('cat-4-desc').innerText = translations[lang].cat4D;
+            
+            document.getElementById('cat-5-title').innerText = translations[lang].cat5T;
+            document.getElementById('cat-5-desc').innerText = translations[lang].cat5D;
+            
+            document.getElementById('cat-6-title').innerText = translations[lang].cat6T;
+            document.getElementById('cat-6-desc').innerText = translations[lang].cat6D;
+        }
+
+        // Refresh (Täzelemek) düwmesiniň funksiýasy
+        document.getElementById('refreshBtn').addEventListener('click', function() {
+            // Sahypany gaýtadan ýükleýär
+            location.reload();
+        });
+    </script>
+
 </body>
 </html>
+
